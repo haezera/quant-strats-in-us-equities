@@ -1,0 +1,70 @@
+# -----------------------------
+# Python
+# -----------------------------
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg
+*.egg-info/
+.eggs/
+*.manifest
+*.spec
+
+# -----------------------------
+# Virtual environments
+# -----------------------------
+.venv/
+venv/
+ENV/
+env/
+.ipynb_checkpoints/
+
+# -----------------------------
+# Jupyter / notebooks
+# -----------------------------
+.ipynb_checkpoints
+*/.ipynb_checkpoints/*
+
+# -----------------------------
+# Build / packaging
+# -----------------------------
+build/
+dist/
+*.log
+*.pot
+*.pyc
+*.pkl
+*.db
+.DS_Store
+
+# -----------------------------
+# Data files (customize as needed)
+# -----------------------------
+*.csv
+*.tsv
+*.xls
+*.xlsx
+*.parquet
+*.h5
+*.hdf5
+
+# Large raw data (safe to exclude; version clean samples instead)
+data/raw/
+data/interim/
+.env
+
+# -----------------------------
+# IDEs / editors
+# -----------------------------
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# -----------------------------
+# OS generated
+# -----------------------------
+Thumbs.db
+.DS_Store
