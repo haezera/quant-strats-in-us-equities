@@ -2,9 +2,19 @@
 
 If you have stumbled upon this project for the purposes of getting market data, I suggest you read my disclaimer about the data. 
 
-### Benchmark and goals for the portfolio
+### Benchmark, universe, goals for the portfolio
 
-We'll be benchmarking off the `Russell 3000`.
+#### Benchmark
+
+We'll be benchmarking off the `Russell 1000`-ish proxy.
+
+We take a yearly rebalance every June, and get the top-1000 stocks. We then take the return of these stocks
+
+#### Universe
+
+We have access to (most) of the entire U.S equities universe. However, for the sake of portfolio training complexity, as well as the quirks that occur at the tail end of some equity prices (search up `BINI` and look at the all-time stocks, for an example), we only consider the top 1000 stocks by market cap for the *previous* month (to avoid lookahead).
+
+#### Performance targets
 
 We target any form of overperformance. Of course, overperformance is going to be difficult with the level of data we have being fairly elementary. We should see significant alpha decay in some factors from 1998 to modern day, as markets have become more efficient.
 
@@ -15,8 +25,8 @@ We have access to about `16,000 - 18,000` stocks in our universe, all of which a
 The project is then split up into a few components:
 1. Data cleaning, partitioning and aggregations
 2. Exploratory data analysis, factor research and white paper review
-3. 
-
+3. Per-factor statistics (rank IC, IC volatiltiy, etc)
+4. Portfolio construction
 
 ### Disclaimer about data
 
