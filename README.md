@@ -1,32 +1,41 @@
 ## Quantitative equity portfolio strategies in U.S Equities (1998 to 2025)
 
-If you have stumbled upon this project for the purposes of getting market data, I suggest you read my disclaimer about the data. 
+If you have stumbled upon this project for the purposes of getting market data, I suggest you read my disclaimer about the data. For all of the strategies/models in this project, we target the `Russell 1000` universe (a proxy of it), with a yearly-rebalanced market cap sorted portfolio.
 
-### Benchmark, universe, goals for the portfolio
+<center>
+    <img width = 500px src='./readme_charts/proxy_ret.png'>
+</center>
 
-#### Benchmark
+### Strategies in this project
 
-We'll be benchmarking off the `Russell 1000`-ish proxy.
+The strategies derive from the same alpha model, which is (in general), a `VALUE/MOMENTUM` factor model with some other factors like `SIZE`, and possible a `VOLATILITY` scaling component. We target 3-month returns. We have for some stock $s$
+at month $t$, a predicted return
 
-We take a yearly rebalance every June, and get the top-1000 stocks. We then take the return of these stocks
+$$ \hat{r}_{st} = \beta_1 \cdot \texttt{VALUE}_{st} + \beta_2 \cdot \texttt{MOMENTUM}_{st} + \beta_0$$
 
-#### Universe
+Then, a stock's "alpha score" $S_{st}$ on month $t$, is the $z$-score of $\hat{r}_{st}$ taken cross-sectionally per-month, across the entire universe. Note the above is similar to the model seen in `Value and Momentum Everywhere` by `AQR` (although they take a composite signal there).
 
-We have access to (most) of the entire U.S equities universe. However, for the sake of portfolio training complexity, as well as the quirks that occur at the tail end of some equity prices (search up `BINI` and look at the all-time stocks, for an example), we only consider the top 1000 stocks by market cap for the *previous* month (to avoid lookahead).
+#### Equity Market Neutral (`100/100`)
 
-#### Performance targets
+In EMN, we target a 0 beta to the market, and seek absolute returns.
 
-We target any form of overperformance. Of course, overperformance is going to be difficult with the level of data we have being fairly elementary. We should see significant alpha decay in some factors from 1998 to modern day, as markets have become more efficient.
+- Benchmark: 3-month treasury bill
+- Total exposure: `200%`
+- Leverage ratio: `2:1`
 
-### Overview of the portfolio and data
+#### Alpha Extension (`130/30`)
 
-We have access to about `16,000 - 18,000` stocks in our universe, all of which are U.S equities. The overview of this project is to create a systematic investment approach targeting `1 month to 3 month` horizons, using industry standard factors and approaches.
+Alpha extension can be split into two components; a long-only, index tracking component (which is `100%` of our long), and then a `30/30` market-neutral, alpha-seeking component. The `30/30` component will be correlated with our `EMN` portfolio, but will also have index-tracking components.
 
-The project is then split up into a few components:
-1. Data cleaning, partitioning and aggregations
-2. Exploratory data analysis, factor research and white paper review
-3. Per-factor statistics (rank IC, IC volatiltiy, etc)
-4. Portfolio construction
+Functionally, it finds constituents to overweight and underweight from an index-passive portfolio to seek alpha.
+
+- Benchmark: `Russell 1000` (we'll test both against our proxy and the actual index)
+- Total exposure: `160%`
+- Leverage ratio: `1.6:1`
+
+### Results of the strategies
+
+To be updated.
 
 ### Disclaimer about data
 
