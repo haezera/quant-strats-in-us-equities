@@ -40,17 +40,17 @@ In EMN, we target a 0 beta to the market, and seek absolute returns.
 Pre-borrow and shorting costs, but post-transaction costs, we find our alpha model overperforms the index with a `5 bps` transaction cost assumption.
 
 <center>
-    <img src='./readme_charts/alpha_ext_pre_tc.png' width=500px>
+    <img src='./readme_charts/alpha_ext_pre_tc.png' width=700px>
 </center>
 
 <center>
-    <img src='./readme_charts/alpha_ext_post_tc.png' width=500px>
+    <img src='./readme_charts/alpha_ext_post_tc.png' width=700px>
 </center>
 
 
 
 <center>
-    <img src='./readme_charts/alpha_ext_overperformance.png' width=500px>
+    <img src='./readme_charts/alpha_ext_overperformance.png' width=700px>
 </center>
 
 This was found using a inverse-volatility portfolio weighting for the `alpha overlay`, and so the portfolio results may be improved by using a more involved `mean-variance optimisation`.
@@ -62,13 +62,13 @@ This was found using a inverse-volatility portfolio weighting for the `alpha ove
 We can also consider the beta for the strategy across history, at a rolling 1-year basis. The chart below considers the "excess" beta - that is the delta between the alpha strategy's beta to the market and a $\beta = 1$.
 
 <center>
-    <img src='./readme_charts/alpha_ext_beta.png' width=500px>
+    <img src='./readme_charts/alpha_ext_beta.png' width=700px>
 </center>
 
 We can also view the factor exposures throuhgout history
 
 <center>
-    <img src='./readme_charts/alpha_ext_factor.png' width=500px>
+    <img src='./readme_charts/alpha_ext_factor.png' width=700px>
 </center>
 
 Some interesting observations is the heavy underweighting of `momentum` during and post-GFC, as well as `EV/EBIT` during COVID-19. 
