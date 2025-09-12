@@ -2,10 +2,6 @@
 
 If you have stumbled upon this project for the purposes of getting market data, I suggest you read my disclaimer about the data. For all of the strategies/models in this project, we target the `Russell 1000` universe (a proxy of it), with a yearly-rebalanced market cap sorted portfolio.
 
-<center>
-    <img width = 500px src='./readme_charts/proxy_ret.png'>
-</center>
-
 ### Strategies in this project
 
 The strategies derive from the same alpha model, which is (in general), a `VALUE/MOMENTUM` factor model with some other factors like `SIZE`, and possible a `VOLATILITY` scaling component. We target 3-month returns. We have for some stock $s$
