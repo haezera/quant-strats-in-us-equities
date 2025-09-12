@@ -1,6 +1,15 @@
 ## Quantitative equity portfolio strategies in U.S Equities (1998 to 2025)
 
-If you have stumbled upon this project for the purposes of getting market data, I suggest you read my disclaimer about the data. For all of the strategies/models in this project, we target the `Russell 1000` universe (a proxy of it), with a yearly-rebalanced market cap sorted portfolio.
+If you have stumbled upon this project for the purposes of getting market data, I am unable to provide you any returns data due to licensing issues.
+
+### Directory structure
+
+The directory is broken down into:
+
+- `/data`: which contains `SQL` schemas and data cleaning.
+- `/prod`: contains "production" research and scripts - simulating what a portfolio manager would use.
+- `/readme_charts`: the charts used in this `readme`.
+- `/research`: the bulk of the work - the research regarding strategies, factors, and portfolio construction
 
 ### Strategies in this project
 
@@ -29,9 +38,25 @@ In EMN, we target a 0 beta to the market, and seek absolute returns.
 - Total exposure: `200%`
 - Leverage ratio: `2:1`
 
-### Results of the strategies
+## Results of the strategies
 
-#### Alpha extension strategy
+### Alpha extension strategy (`130/30`)
+
+#### Details of the fund and strategy
+
+The fund is an index-tracking portfolio with an alpha overlay, which is a `30/30` market neutral component. The market neutral component is weighted with inverse volatility.
+
+We used all available factors, while sector neutralising for value.
+- `EV/EBITDA`
+- `PS`
+- `PE`
+- `PB`
+- `EV/EBIT`
+- `MOMENTUM`
+
+In our factor database, all of our factors are normalised and are flipped in such a way that $> 0$ indiactes a positive forward-looking alpha.
+
+#### Returns, factor exposures and historical $\beta$
 
 Pre-borrow and shorting costs, but post-transaction costs, we find our alpha model overperforms the index with a `5 bps` transaction cost assumption.
 
@@ -61,18 +86,12 @@ We can also consider the beta for the strategy across history, at a rolling 1-ye
     <img src='./readme_charts/alpha_ext_beta.png' width=700px>
 </center>
 
+We can see a big drop in the market exposure during large drawdowns like 2020, and that overall, the strategy is slightly underexposed to the market.
+
 We can also view the factor exposures throughout history
 
 <center>
     <img src='./readme_charts/alpha_ext_factor.png' width=700px>
 </center>
 
-Some interesting observations is the heavy underweighting of `momentum` during and post-GFC, as well as the over-weighting of `EV/EBIT` during COVID-19. 
-### Disclaimer about data
-
-All of the market data I used for this project comes from `Sharadar`. In particular, I used two of their data packages that can be publicly bought from `Nasdaq Data Link`:
-
-- `Sharadar Equity Prices`
-- `Sharadar US Core Fundamentals`
-
-You are welcome to re-create my results with the above data; and I am also welcome to hear about data issues that may occur in these above two data sets. Perhaps the first thing you learn when you work in quantitative finance, particularly in more higher frequency data (but in all data in general), is that you should *never trust the data you work with*.
+Some interesting observations is the heavy underweighting of `momentum` during and post-GFC, as well as the over-weighting of `EV/EBIT` during COVID-19. This may have been due to the breakdown in valuation factors, and thus the model relied more on `EV/EBIT` and `EV/EBITDA` for predictiveness.
