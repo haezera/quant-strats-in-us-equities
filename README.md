@@ -65,7 +65,7 @@ We can also consider the beta for the strategy across history, at a rolling 1-ye
     <img src='./readme_charts/alpha_ext_beta.png' width=700px>
 </center>
 
-We can also view the factor exposures throuhgout history
+We can also view the factor exposures throughout history
 
 <center>
     <img src='./readme_charts/alpha_ext_factor.png' width=700px>
