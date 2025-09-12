@@ -65,7 +65,13 @@ We can also consider the beta for the strategy across history, at a rolling 1-ye
     <img src='./readme_charts/alpha_ext_beta.png' width=500px>
 </center>
 
+We can also view the factor exposures throuhgout history
 
+<center>
+    <img src='./readme_charts/alpha_ext_factor.png' width=500px>
+</center>
+
+Some interesting observations is the heavy underweighting of `momentum` during and post-GFC, as well as `EV/EBIT` during COVID-19. 
 ### Disclaimer about data
 
 All of the market data I used for this project comes from `Sharadar`. In particular, I used two of their data packages that can be publicly bought from `Nasdaq Data Link`:
