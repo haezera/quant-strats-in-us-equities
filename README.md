@@ -71,7 +71,7 @@ We can also view the factor exposures throughout history
     <img src='./readme_charts/alpha_ext_factor.png' width=700px>
 </center>
 
-Some interesting observations is the heavy underweighting of `momentum` during and post-GFC, as well as `EV/EBIT` during COVID-19. 
+Some interesting observations is the heavy underweighting of `momentum` during and post-GFC, as well as the over-weighting of `EV/EBIT` during COVID-19. 
 ### Disclaimer about data
 
 All of the market data I used for this project comes from `Sharadar`. In particular, I used two of their data packages that can be publicly bought from `Nasdaq Data Link`:
