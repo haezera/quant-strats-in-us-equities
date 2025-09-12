@@ -15,14 +15,6 @@ $$ \hat{r}_{st} = \beta_1 \cdot \texttt{VALUE}_{st} + \beta_2 \cdot \texttt{MOME
 
 Then, a stock's "alpha score" $S_{st}$ on month $t$, is the $z$-score of $\hat{r}_{st}$ taken cross-sectionally per-month, across the entire universe. Note the above is similar to the model seen in `Value and Momentum Everywhere` by `AQR` (although they take a composite signal there).
 
-#### Equity Market Neutral (`100/100`)
-
-In EMN, we target a 0 beta to the market, and seek absolute returns.
-
-- Benchmark: 3-month treasury bill
-- Total exposure: `200%`
-- Leverage ratio: `2:1`
-
 #### Alpha Extension (`130/30`)
 
 Alpha extension can be split into two components; a long-only, index tracking component (which is `100%` of our long), and then a `30/30` market-neutral, alpha-seeking component. The `30/30` component will be correlated with our `EMN` portfolio, but will also have index-tracking components.
@@ -32,6 +24,14 @@ Functionally, it finds constituents to overweight and underweight from an index-
 - Benchmark: `Russell 1000` (we'll test both against our proxy and the actual index)
 - Total exposure: `160%`
 - Leverage ratio: `1.6:1`
+
+#### Equity Market Neutral (`100/100`)
+
+In EMN, we target a 0 beta to the market, and seek absolute returns.
+
+- Benchmark: 3-month treasury bill
+- Total exposure: `200%`
+- Leverage ratio: `2:1`
 
 ### Results of the strategies
 
