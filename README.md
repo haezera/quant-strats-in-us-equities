@@ -35,7 +35,36 @@ In EMN, we target a 0 beta to the market, and seek absolute returns.
 
 ### Results of the strategies
 
-To be updated.
+#### Alpha extension strategy
+
+Pre-borrow and shorting costs, but post-transaction costs, we find our alpha model overperforms the index with a `5 bps` transaction cost assumption.
+
+<center>
+    <img src='./readme_charts/alpha_ext_pre_tc.png' width=500px>
+</center>
+
+<center>
+    <img src='./readme_charts/alpha_ext_post_tc.png' width=500px>
+</center>
+
+
+
+<center>
+    <img src='./readme_charts/alpha_ext_overperformance.png' width=500px>
+</center>
+
+This was found using a inverse-volatility portfolio weighting for the `alpha overlay`, and so the portfolio results may be improved by using a more involved `mean-variance optimisation`.
+
+- Sharpe (pre-borrow, pre-short, institutional tc): `0.52`
+- Mean annualised return: `8.9%`
+- Mean annualised volatility: `17.0%`
+
+We can also consider the beta for the strategy across history, at a rolling 1-year basis. The chart below considers the "excess" beta - that is the delta between the alpha strategy's beta to the market and a $\beta = 1$.
+
+<center>
+    <img src='./readme_charts/alpha_ext_beta.png' width=500px>
+</center>
+
 
 ### Disclaimer about data
 
