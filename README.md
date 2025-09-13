@@ -9,7 +9,6 @@ This paper is heavily inspired from the learnings in 'Value and Momentum Everywh
 The directory is broken down into:
 
 - `/data`: which contains `SQL` schemas and data cleaning.
-- `/prod`: contains "production" research and scripts - simulating what a portfolio manager would use. Things like providing an excel sheet of trades required for the month.
 - `/readme_charts`: the charts used in this `readme`.
 - `/research`: the bulk of the work - the research regarding strategies, factors, and portfolio construction
 
