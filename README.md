@@ -2,12 +2,14 @@
 
 If you have stumbled upon this project for the purposes of getting market data, I am unable to provide you any returns data due to licensing issues.
 
+This paper is heavily inspired from the learnings in 'Value and Momentum Everywhere' by AQR. It is almost certain that the strategies and models used in this project are too simple for any institutional investor to actually consider, but it *is* a great project for learning how portfolios are constructed, and how quantitative equity strategies are evaluated.
+
 ### Directory structure
 
 The directory is broken down into:
 
 - `/data`: which contains `SQL` schemas and data cleaning.
-- `/prod`: contains "production" research and scripts - simulating what a portfolio manager would use.
+- `/prod`: contains "production" research and scripts - simulating what a portfolio manager would use. Things like providing an excel sheet of trades required for the month.
 - `/readme_charts`: the charts used in this `readme`.
 - `/research`: the bulk of the work - the research regarding strategies, factors, and portfolio construction
 
@@ -95,3 +97,22 @@ We can also view the factor exposures throughout history
 </center>
 
 Some interesting observations is the heavy underweighting of `momentum` during and post-GFC, as well as the over-weighting of `EV/EBIT` during COVID-19. This may have been due to the breakdown in valuation factors, and thus the model relied more on `EV/EBIT` and `EV/EBITDA` for predictiveness.
+
+### Equity market nuetral strategy (`100/100`)
+
+With the equity market neutral strategy, we see less consistent success - but still an overperformance of our chosen benchmark (`13-week treasury bills`).
+
+<center>
+    <img src='./readme_charts/emn_return.png' width=700px>
+</center>
+
+We can observe significant drawdowns; many of which are extended and don't recover for extended periods of time. If this were a real fund, than it's likely that the fund would be closed pretty quickly in periods like 2012 - 2018, when the strategy almost has no real returns.
+
+<center>
+    <img src='./readme_charts/emn_beta.png' width=700px>
+</center>
+
+We observe a low beta of $\beta = 0.13$.
+- Sharpe: `0.29`
+- Annualised return: `4%`
+- Annualised volatility: `14%`
