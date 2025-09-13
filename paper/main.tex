@@ -110,19 +110,14 @@ In construction, we begin with a passive index weight (tracking the index), and 
 overlay' component to tilt the weights for an expected excess return.
 
 \section{Data}
-\subsection{Sources}
+\subsection{Source}
 
-I sourced my data from Sharadar; specifically using 
-\begin{itemize}
-    \item Sharadar Core US Fundamentals
-    \item Sharadar Equity Prices
-\end{itemize}
 As with any equity data set, I found plenty of issues in the data. I have taken care to clean data where possible - a big problem is the overstatement of market caps due to anomalous prices (for example, prices 
 in the billions!). I generally filtered these stocks from our Russell 1000 proxy by using a variety 
 of fundamental factors to consider nonsensical values. The remaining index appeared to adequately
 track an index ETF.
 \newline \\ 
-Furthermore, I cannot guarantee that there is no form of data leakage in Sharadar's value factors. The results
+Furthermore, I cannot guarantee that there is no form of data leakage in the value factors. The results
 that we see indicate to me that if there is any leakage, that it is extremely minor, as the edge we see 
 is consistent with literature and also not absurd.
 
